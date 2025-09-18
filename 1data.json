@@ -1,0 +1,17 @@
+import plotly.graph_objects as go
+
+nodes = ["Источник A", "Источник B", "Источник C",
+         "Цель X", "Цель Y", "Цель Z"]
+
+source = [0, 1, 0, 2, 3, 3]
+target = [3, 3, 4, 4, 4, 5]
+value = [8, 4, 2, 8, 4, 2]
+
+node_colors = ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd", "#8c564b"]
+link_colors = ["rgba(31,119,180,0.6)", "rgba(255,127,14,0.6)", "rgba(31,119,180,0.6)",
+               "rgba(44,160,44,0.6)", "rgba(214,39,40,0.6)", "rgba(214,39,40,0.6)"]
+
+fig = go.Figure(data=[go.Sankey(
+    node=dict(label=nodes, color=node_colors, pad=20, thickness=20, line=dict(color="black", width=0.5)),
+    link=dict(source=source, target=target, value=value, color=link_colors)
+)])
